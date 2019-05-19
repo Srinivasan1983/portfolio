@@ -11,28 +11,35 @@ import { Link } from "react-router-dom";
 
 import styled from "styled-components";
 import Routes from "../routes/Routes";
-import FooterPage from './FooterPage';
+import FooterPage from "./FooterPage";
 
 class NavigationBar extends Component {
+  getTitle = () => {
+    return (
+      <Link to="/" style={{ textDecoration: 'none' , color: "white" }}>
+        <h3>My Portfolio</h3>
+      </Link>
+    );
+  };
   render() {
     return (
       <div>
         <HeaderWrapper className="demo-big-content">
           <Layout>
-            <Header className="header-color" title="Title" scroll>
-                <Textfield
-                  value=""
-                  onChange={() => {}}
-                  label="Search3"
-                  expandable
-                  expandableIcon="search"
-                />
-                <Navigation>
-                  <Link to="/resume">Resume</Link>
-                  <Link to="/aboutme">About Me</Link>
-                  <Link to="/projects">Projects</Link>
-                  <Link to="/contact">Contact</Link>
-                </Navigation>
+            <Header className="header-color" title={this.getTitle()} scroll>
+              <Textfield
+                value=""
+                onChange={() => {}}
+                label="Search3"
+                expandable
+                expandableIcon="search"
+              />
+              <Navigation>
+                <Link to="/resume">Resume</Link>
+                <Link to="/aboutme">About Me</Link>
+                <Link to="/projects">Projects</Link>
+                <Link to="/contact">Contact</Link>
+              </Navigation>
             </Header>
             <Drawer title="Title">
               <Navigation>
