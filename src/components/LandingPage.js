@@ -26,13 +26,15 @@ class LandingPage extends Component {
     return (
       <LandingGrid>
         <Grid className="landing-grid">
-          <Cell col={3} tablet={8} align={"middle"}>
-            <img
-              src="http://www.dolciariaborrillo.it/wp-content/uploads/2015/08/man.png"
-              alt="profile-pic"
-              className="profile-pic"
-            />
-          </Cell>
+          <div className="banner-profile">
+            <Cell col={3} tablet={6} align={"middle"}>
+              <img
+                src="http://www.dolciariaborrillo.it/wp-content/uploads/2015/08/man.png"
+                alt="profile-pic"
+                className="profile-pic"
+              />
+            </Cell>
+          </div>
           <Cell col={5} tablet={6} align={"middle"}>
             <div className="banner-text">
               <h4>Full Stack Developer</h4>
@@ -91,9 +93,15 @@ const LandingGrid = styled.div`
     margin: auto;
     text-align: center;
     height: auto;
+    width: auto;
+  }
+  .banner-profile {
+    margin: auto;
+    border-radius: 5px;
+    text-align: center;
   }
   .profile-pic {
-    height: 250px;
+    height: 200px;
   }
   .banner-text {
     background-color: black;
@@ -142,12 +150,11 @@ const LandingGrid = styled.div`
     }
   }
   .brand-linkedin {
-    color: #0077B5;
+    color: #0077b5;
   }
   .brand-github {
     color: white;
   }
-
 `;
 
 export default LandingPage;
