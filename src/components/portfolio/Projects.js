@@ -5,13 +5,10 @@ import {
   Grid,
   Cell,
   Card,
-  CardTitle,
-  CardActions,
-  CardText,
-  CardMenu,
-  Button,
-  IconButton
+  CardTitle
 } from "react-mdl";
+
+import styled from "styled-components";
 
 class Projects extends Component {
   constructor(props) {
@@ -24,7 +21,7 @@ class Projects extends Component {
 
     if (this.state.activeTab === 0) {
       return (
-        <div>
+        <div className="project-grid">
           <Grid className="demo-grid-3">
             <Cell col={4} tablet={8}>
               <Card shadow={0} style={{ margin: "auto" }}>
@@ -44,7 +41,28 @@ class Projects extends Component {
               Description
             </Cell>
             <Cell col={4} phone={4}>
-              Link
+              <LinkWrapper>
+                <div className="link-container">
+                  <a
+                    href="https://e-shopping.netlify.com/"
+                    className="eshopping-live-demo"
+                    title="LIVE DEMO"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i class="fas fa-link">Live Demo</i>
+                  </a>
+                  <a
+                    href="https://github.com/Srinivasan1983/eshopping"
+                    className="eshopping-github"
+                    title="SOURCE CODE"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i class="fab fa-github-square">Github</i>
+                  </a>
+                </div>
+              </LinkWrapper>
             </Cell>
           </Grid>
           <Grid className="demo-grid-3">
@@ -250,9 +268,7 @@ class Projects extends Component {
           onChange={tabId => this.handleTabChange(tabId)}
           ripple
         >
-          <Tab>React</Tab>
-          <Tab>VueJs</Tab>
-          <Tab>Ethereum</Tab>
+          <Tab>My Projects</Tab>
         </Tabs>
         <section>
           <Grid className="project-grid" align={"middle"}>
@@ -267,3 +283,20 @@ class Projects extends Component {
 }
 
 export default Projects;
+
+const LinkWrapper = styled.div`
+
+  .link-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 25px;
+    padding: 0 15px;
+  }
+  .eshopping-live-demo {
+    color: orangered;
+  }
+  .eshopping-github {
+    color: orangered;
+  }
+`;
